@@ -1,0 +1,75 @@
+#server configuration
+server:
+    port: 8080
+
+#database configuration
+
+spring:
+  profiles:
+    active: default
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost/db_1874?useUnicode=yes&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    username: root
+    password: teamoshary520
+
+
+
+# Show or not log for each sql query
+#spring.jpa.show-sql = true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#wechat pay 
+
+wechat:
+  pay:
+    appId: wxe06b5ef494996e05
+    mchId: 1298827201
+    mchKey: xl968666xl968666xl968666xl968666
+#logging
+
+
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        web: DEBUG
+      hibernate: ERROR
+
+
+#profile properties
+---
+spring:
+  profiles: dev
+host: marketing.service.51xuanshi.com:7788
+isLocal: true
+
+---
+spring:
+  profiles: sit
+host: marketing.service.51xuanshi.com:7788
+isLocal: false
+
+
+
+
+
+
+
+
