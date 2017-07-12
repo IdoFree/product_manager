@@ -2,10 +2,7 @@ package com.ido.demo.model;
 
 import com.ido.demo.model.enums.Unit;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by Ido on 2017/7/12.
@@ -25,4 +22,7 @@ public class Material {
     private Unit unit;
 
     private Long count;
+
+    @ManyToOne
+    private  Product product;
 }

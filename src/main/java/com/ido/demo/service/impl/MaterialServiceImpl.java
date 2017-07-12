@@ -13,4 +13,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class MaterialServiceImpl implements MaterialService {
+    @Override
+    public com.ido.demo.model.Material addMaterial(com.ido.demo.model.Material m) {
+        return null;
+    }
 }
