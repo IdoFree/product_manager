@@ -16,8 +16,9 @@ public class SaleRecordServiceImpl implements SaleRecordService{
     @Autowired
     private SaleRecordRepository saleRecordRepository;
 
+
     @Override
-    public void sale(List<SaleRecord> records) {
-        saleRecordRepository.save(records);
+    public void sale(List<Long> productIds) {
+
     }
 }
