@@ -1,10 +1,8 @@
 package com.ido.demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 
 @Entity
@@ -18,9 +16,12 @@ public class Product implements Serializable{
     private String name;
     private String details;
 
-    private Category catogory;
+    @Column(name="category_id")
+    private Category category;
 
     private Float price;
+
+
 
     public Long getId() {
         return id;
@@ -46,14 +47,14 @@ public class Product implements Serializable{
         this.details = details;
     }
 
-    public Category getCatogory() {
-        return catogory;
+
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCatogory(Category catogory) {
-        this.catogory = catogory;
+    public void setCategory(Category category) {
+        this.category = category;
     }
-
     public Float getPrice() {
         return price;
     }
@@ -61,4 +62,6 @@ public class Product implements Serializable{
     public void setPrice(Float price) {
         this.price = price;
     }
+
+
 }

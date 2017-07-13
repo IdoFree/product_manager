@@ -15,14 +15,63 @@ public class Material {
     private Long id;
 
     private String name;
+
     private String details;
 
-    private Category catogory;
+
 
     private Unit unit;
 
-    private Long count;
+    private Float count;
 
-    @ManyToOne
+    @Column(name="product_id")
     private  Product product;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    public Unit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(Unit unit) {
+        this.unit = unit;
+    }
+
+    public Float getCount() {
+        return count;
+    }
+
+    public void setCount(Float count) {
+        this.count = count;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 }

@@ -3,6 +3,7 @@ package com.ido.demo.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 
 @Entity
@@ -13,14 +14,13 @@ public class SaleRecord implements Serializable{
     @GeneratedValue
     private Long id;
 
-    @OneToMany(cascade = {CascadeType.ALL})
-    private SaleRecordProductMap saleMap;
+
 
     private Date saleTime;
 
     private Float actualPrice;
 
-    @OneToOne(cascade = {CascadeType.ALL})
+    @Column(name="buyer_id")
     private Buyer buyer;
 
     public Long getId() {
@@ -31,13 +31,7 @@ public class SaleRecord implements Serializable{
         this.id = id;
     }
 
-    public SaleRecordProductMap getSaleMap() {
-        return saleMap;
-    }
 
-    public void setSaleMap(SaleRecordProductMap saleMap) {
-        this.saleMap = saleMap;
-    }
 
     public Date getSaleTime() {
         return saleTime;

@@ -13,7 +13,7 @@ public class SaleRecordProductMap {
     @GeneratedValue
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     private Product product;
 
     @ManyToOne
@@ -25,5 +25,21 @@ public class SaleRecordProductMap {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public SaleRecord getSaleRecord() {
+        return saleRecord;
+    }
+
+    public void setSaleRecord(SaleRecord saleRecord) {
+        this.saleRecord = saleRecord;
     }
 }

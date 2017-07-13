@@ -57,8 +57,28 @@ PRIMARY KEY (id)
 );
 
 
+CREATE TABLE  db_1874.Sale_Record_Product_Map
+(
+id int NOT NULL AUTO_INCREMENT,
+product_id int ,
+sale_record_id int,
+PRIMARY KEY (id)
+);
 
 
 
 
 
+
+
+CREATE TABLE  db_1874.material
+(
+id int NOT NULL AUTO_INCREMENT,
+name varchar(50) ,
+details varchar(255) ,
+category_id int,
+unit varchar(10),
+count float(9,2),
+product_id int,
+PRIMARY KEY (id)
+);
