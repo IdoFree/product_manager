@@ -21,6 +21,8 @@ public class Product implements Serializable{
 
     private Float price;
 
+    private Float discount;
+
 
 
     public Long getId() {
@@ -63,5 +65,11 @@ public class Product implements Serializable{
         this.price = price;
     }
 
+    public Float getDiscount() {
+        return discount;
+    }
 
+    public void setDiscount(Float discount) {
+        this.discount = discount;
+    }
 }

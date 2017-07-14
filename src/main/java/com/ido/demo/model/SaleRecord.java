@@ -14,13 +14,12 @@ public class SaleRecord implements Serializable{
     @GeneratedValue
     private Long id;
 
-
-
     private Date saleTime;
 
     private Float actualPrice;
 
-    @Column(name="buyer_id")
+    @JoinColumn(name="buyer")
+    @OneToOne(cascade = {CascadeType.ALL})
     private Buyer buyer;
 
     public Long getId() {

@@ -1,5 +1,6 @@
 package com.ido.demo.service;
 
+import com.ido.demo.model.Buyer;
 import com.ido.demo.model.SaleRecord;
 
 import java.util.List;
@@ -9,5 +10,5 @@ import java.util.List;
  */
 public interface SaleRecordService {
 
-    public void sale(List<Long> productIds);
+    public void sale(List<Long> productIds,Buyer buyer);
 }

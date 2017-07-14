@@ -19,7 +19,6 @@ public class Material {
     private String details;
 
 
-
     private Unit unit;
 
     private Float count;

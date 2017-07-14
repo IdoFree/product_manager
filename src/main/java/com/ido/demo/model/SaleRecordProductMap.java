@@ -16,7 +16,7 @@ public class SaleRecordProductMap {
     @ManyToOne
     private Product product;
 
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     private SaleRecord saleRecord;
 
     public Long getId() {
