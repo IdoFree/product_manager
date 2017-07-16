@@ -23,7 +23,7 @@ public class TestSaleRecord {
     private SaleRecordService saleRecordService;
     @Autowired
     private UserService userService;
-    @Test
+//    @Test
     public void testSale(){
         OrderRequest request = new OrderRequest();
         Buyer b= new Buyer();

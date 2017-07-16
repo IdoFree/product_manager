@@ -44,6 +44,7 @@ public class SaleRecordServiceImpl implements SaleRecordService{
         saleRecord.setBuyer(buyer);
 
         Float sum = 0f;
+//        sum = products.stream().mapto(p->p.getDiscount()*p.getPrice()).sum();
        for(Product p: products){
            sum += p.getPrice()*p.getDiscount();
        }
