@@ -5,10 +5,11 @@ import com.ido.demo.model.Product;
 import com.ido.demo.model.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 
 
-public interface BuyerRepository extends CrudRepository<Buyer, Long> {
+public interface BuyerRepository extends PagingAndSortingRepository<Buyer, Long> {
     Buyer findById(Long id);
 
     @Query(value ="select b from Buyer b where b.name = :name")

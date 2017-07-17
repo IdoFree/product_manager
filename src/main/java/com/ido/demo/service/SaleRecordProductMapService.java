@@ -11,4 +11,5 @@ import java.util.List;
 @Service
 public interface  SaleRecordProductMapService {
     void save(List<SaleRecordProductMap> saleMaps);
+
 }

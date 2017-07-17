@@ -1,6 +1,7 @@
 package com.ido.demo.service.impl;
 
 import com.ido.demo.Repository.SaleRecordRepository;
+import com.ido.demo.controller.SaleRecordModel.Response;
 import com.ido.demo.model.Buyer;
 import com.ido.demo.model.Product;
 import com.ido.demo.model.SaleRecord;
@@ -10,11 +11,10 @@ import com.ido.demo.service.SaleRecordProductMapService;
 import com.ido.demo.service.SaleRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.data.domain.Pageable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.function.Consumer;
 
 /**
  * Created by Administrator on 2017/7/11.
@@ -29,6 +29,7 @@ public class SaleRecordServiceImpl implements SaleRecordService{
 
     @Autowired
     private SaleRecordProductMapService saleMapService;
+
 
 
     @Override
@@ -62,5 +63,31 @@ public class SaleRecordServiceImpl implements SaleRecordService{
 
         saleMapService.save(saleMaps);
 
+    }
+
+    @Override
+    public List<SaleRecord> findAll(Pageable pageable) {
+        saleRecordRepository.findAll(pageable);
+        return null;
+    }
+
+    @Override
+    public List<SaleRecord> findBySaleTime(Date saleTime, Pageable pageable) {
+        return saleRecordRepository.findBySaleTime(saleTime,pageable);
+    }
+
+    @Override
+    public List<Response> findAllInToday(Pageable pageable) {
+        List<Object[]> results = saleRecordRepository.findAllInToday(new Date());
+        if(results == null ||results.size() == 0) return null;
+
+        List<Response> responseList = new ArrayList<>(results.size());
+        for(Object r[] : results){
+            Response rsp = new Response();
+            rsp.setProdName((String) r[0]);
+            rsp.setPrice((Float) r[1]);
+            responseList.add(rsp);
+        }
+        return responseList;
     }
 }

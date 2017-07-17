@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:fragment="table"  >
+    <table  >
+        <thead>
+        <tr>
+            <th>
+                产品名
+            </th>
+
+            <th>
+                金额
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="record : ${saleRerods}">
+
+            <td th:text="${record.prodName}">
+                TB - Monthly
+            </td >
+            <td th:text="${record.price}">
+                01/04/2012
+            </td>
+
+        </tr>
+
+        </tbody>
+    </table></div>
+</body>
+</html>

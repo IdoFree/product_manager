@@ -1,4 +1,4 @@
-package com.ido.demo.controller.RequestModel;
+package com.ido.demo.controller.OrderRequestModel;
 
 import com.ido.demo.model.Buyer;
 
