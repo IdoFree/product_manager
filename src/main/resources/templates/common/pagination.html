@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div th:fragment="pagination">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        var default_page_size = 20;
+        function page(page,size){
+            alert(size);
+        }
+    </script>
+
+    <ul class="pagination">
+        <li>
+            <a href="#" onclick="page(0,default_page_size)">First</a>
+        </li>
+        <li th:each="page,iterStat : ${pages}">
+            <a href="#" th:text="${iterStat.index}+1"></a>
+        </li>
+        <li>
+            <a href="#">Last</a>
+        </li>
+    </ul>
+</div>
+
+
+
+</body>
+
+</html>

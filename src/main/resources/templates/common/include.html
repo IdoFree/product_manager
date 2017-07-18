@@ -15,7 +15,14 @@
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div th:fragment="basePath">
+    <script>
+        function getBasePath(){
+        return "http://localhost:8080";
+        }
+    </script>
 
+</div>
 </body>
 
 </html>

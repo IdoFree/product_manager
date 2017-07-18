@@ -3,13 +3,16 @@ package com.ido.demo.controller;
 import com.ido.demo.controller.OrderRequestModel.OrderRequest;
 import com.ido.demo.controller.SaleRecordModel.Response;
 import com.ido.demo.model.Product;
-import com.ido.demo.model.SaleRecord;
 import com.ido.demo.service.ProductService;
 import com.ido.demo.service.SaleRecordService;
+import com.ido.demo.utils.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -53,6 +56,7 @@ public class SalingController {
         Map<String, Object> model = new HashMap<>();
         List<Response> results = saleRecordService.findAllInToday(pageable);
         model.put("saleRerods",results);
+        PageUtil.preparePage(model,results);
         return new ModelAndView("statistics/sale_records",model);
     }
 
