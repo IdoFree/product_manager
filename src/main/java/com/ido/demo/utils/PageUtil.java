@@ -31,6 +31,10 @@ public class PageUtil {
      */
     public static  void preparePage(Map<String, Object> model, Collection source){
         //todo ,default 10 product per page  , may need to be able to  customize in the future
+        if(source == null){
+            model.put("pages",new ArrayList(0));
+            return;
+        }
         int size = source.size()/10 +1;
         List pages = new ArrayList(size);
         for(int i = 0; i< size; i++){
