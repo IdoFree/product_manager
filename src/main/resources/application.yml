@@ -13,8 +13,8 @@ spring:
     show-sql: true
   datasource:
     url: jdbc:mysql://localhost/db_1874?useUnicode=yes&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
-    username: root
-    password: teamoshary520
+    username: your user name
+    password: your password
 
 
 
